@@ -59,6 +59,7 @@ class AssociatiController extends Controller
         $viewData["title"] = "Aggiunge Associato";
         $anno = 2000;
         $anni = 2000;
+        
         while ($anno < $annox+2) {
             $anni = $anni.','.$anno+1;
             $anno++;
