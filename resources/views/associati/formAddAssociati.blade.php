@@ -58,7 +58,7 @@
                                     <select name="ruolo_spec[]" id="tso" class="form-select" aria-label="Ruolo_specifico" multiple="">
                                         @foreach ($viewData['enumruolispec'] as $anag)
                                             <option id="opt1" value="{{ $anag->id }}">
-                                                {{ $anag->id . ' ' . $anag->nome }}</option>
+                                                {{$anag->id.' '. $anag->nome }}</option>
                                         @endforeach
                                     </select>
                                 </div>

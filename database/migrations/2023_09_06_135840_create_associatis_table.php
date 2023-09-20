@@ -24,7 +24,7 @@ return new class extends Migration
 
             $table->unsignedBigInteger('dateiscr_id'); 
             $table->foreign('dateiscr_id')->references('id')->on('dateiscrs'); 
-            $table->string('nome');
+            $table->string('nome')->nullable();
 
             $table->timestamps();
         });
