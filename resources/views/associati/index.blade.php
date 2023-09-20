@@ -16,7 +16,7 @@
     }
 
     .lab {
-        width: 100px;
+        width: 150px;
         color: #2f3a79;
     }
 
@@ -105,26 +105,28 @@
 
                                             <div class="ruolo_spec">
                                                 
+                                                <label class="lab rsp">Ruolo
+                                                    specifico:</label><br>
                                                 @forelse($soci->ruoli_specm as $soci->ruoli_specm)
-                                                    <label class="lab rsp">Ruolo
-                                                        specif:</label>{{ $soci->ruoli_specm->nome }}<br>
+                                                    {{ $soci->ruoli_specm->nome }}
                                                 @empty
-                                                    <label class="lab rsp">Ruolo specif:</label><br>
-                                                    <label class="lab rsp">Ruolo specif:</label><br>
+                                                   
                                                 @endforelse
+                                                <br>
                                             </div>
                                             <br>
-                                            <div class="dataiscr">
+                                            <div >
+                                                <label class="lab dat">Data
+                                                    iscrizione:</label><br>
                                                 @forelse($soci->dateiscr_many as $soci->date_specm)
-                                                    <label class="lab dat">Data
-                                                        iscriz:</label>{{ $soci->date_specm->nome }}<br>
+                                                    {{ $soci->date_specm->nome }}
                                                 @empty
-                                                    <label class="lab dat">Data iscr:</label><br>
+                                                   
                                                 @endforelse
                                                 <br>
                                             </div>
 
-                                            <div class="published">
+                                            <div >
                                                 <label class="lab">Pubblicato:</label>
                                                 {{ $soci->anagrafica->published }}
                                                 </label><br>
