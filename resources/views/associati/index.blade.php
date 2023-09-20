@@ -76,7 +76,8 @@
                             
                             <div class="row">
 
-                                {{-- dd($viewData) --}}
+                               
+                                
                                 @php $primo = 0; @endphp
                                 @foreach ($viewData['associati'] as $soci)
                                     <div class="col">
@@ -103,6 +104,7 @@
                                                     class="lab">Ruolo:</label>{{ $soci->ruoli->nome }}<br></div>
 
                                             <div class="ruolo_spec">
+                                                
                                                 @forelse($soci->ruoli_specm as $soci->ruoli_specm)
                                                     <label class="lab rsp">Ruolo
                                                         specif:</label>{{ $soci->ruoli_specm->nome }}<br>

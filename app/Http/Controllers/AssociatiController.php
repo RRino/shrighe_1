@@ -37,8 +37,8 @@ class AssociatiController extends Controller
         $viewData = [];
         $viewData['title'] = " associati";
 
-        $viewData['associati'] = Associati::with(["anagrafica", "ruoli", "ruoli_spec", "dateiscr_many"])->get();
-
+        $viewData['associati'] = Associati::with(["anagrafica", "ruoli",  "ruoli_specm", "dateiscr_many"])->get();
+        
         // return view('associati.index', compact('associatis', 'ruoli'));
         return view('associati.index')->with("viewData", $viewData);
     }
@@ -63,7 +63,7 @@ class AssociatiController extends Controller
         $viewData["ruoli"] = Ruoli::all();
         $viewData["ruoli_spec"] = Ruoli_spec::all();
         $viewData["enumruolispec"] = Enumruolispec::all();
-        $viewData['associati'] = Associati::with(["anagrafica", "ruoli", "ruoli_spec", "dateiscr_many"])->get();
+        $viewData['associati'] = Associati::with(["anagrafica", "ruoli", "ruoli_specm", "dateiscr_many"])->get();
 
         return view('associati.formAddAssociati')->with("viewData", $viewData);
     }
@@ -74,14 +74,13 @@ class AssociatiController extends Controller
         $id = $request->id;
 
         $viewData = [];
-    
         $viewData["ruoli"] = Enumruolispec::all();
         
         $ruoli_speca = $request->anagrafica;
         foreach ($request->ruolo_spec as $rq) {
             $ruoli_spec = new Ruoli_spec;
             $ruoli_spec->associati_id = $ruoli_speca;
-            $ruoli_spec->ruoli_spec_id = $rq;
+           // $ruoli_spec->ruoli_spec_id = $rq;
             $ruoli_spec->nome = $viewData["ruoli"][$rq]->nome;
             $ruoli_spec->save();
            $rspid =  $ruoli_spec->id;
@@ -99,8 +98,8 @@ class AssociatiController extends Controller
         $associati = new Associati;
         $associati->anagrafica_id = $request->anagrafica;
         $associati->ruoli_id = $request->ruolo;
-        $associati->ruoli_spec_id = $ruoli_spec->id;
-        $associati->dateiscr_id = $dataiscr->id;
+        $associati->ruoli_spec_id = $request->anagrafica;
+        $associati->dateiscr_id = $request->anagrafica;
 
         $datis = Associati::where('anagrafica_id', $request->anagrafica)->get();
 

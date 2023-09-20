@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('ruoli_specs', function (Blueprint $table) {
             $table->id();
-            $table->string('nome');
+            $table->string('nome')->nullable();
+            $table->unsignedBigInteger('associati_id');
             $table->timestamps();
  
         });

@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('dateiscrs', function (Blueprint $table) {
             $table->id();
             $table->string('nome')->nullable();
+            $table->unsignedBigInteger('associati_id');
             $table->timestamps();
         });
     }

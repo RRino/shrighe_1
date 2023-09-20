@@ -11,7 +11,7 @@ class Ruoli_spec extends Model
 
     public function ruoli(): BelongsTo
     {
-        return $this->belongsTo(Associoati::class);
+        return $this->belongsTo(Associati::class);
     }
 
     public function ruolim()
