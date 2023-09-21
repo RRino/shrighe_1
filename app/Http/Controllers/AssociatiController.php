@@ -22,6 +22,7 @@ class AssociatiController extends Controller
         $viewData = [];
         $viewData['title'] = " associati";
 
+        //w
         $viewData['associati'] = Associati::with(["anagrafica", "ruoli", "ruoli_specm", "dateiscr"])->get();
         return $viewData;
 
