@@ -22,7 +22,6 @@ class AssociatiController extends Controller
         $viewData = [];
         $viewData['title'] = " associati";
 
-        //w
         $viewData['associati'] = Associati::with(["anagrafica", "ruoli", "ruoli_specm", "dateiscr"])->get();
         return $viewData;
 
@@ -80,8 +79,7 @@ class AssociatiController extends Controller
         $ruoli_speca = $request->anagrafica;
         foreach ($request->ruolo_spec as $rq) {
             $ruoli_spec = new Ruoli_spec;
-            $ruoli_spec->associati_id = $ruoli_speca;
-           // $ruoli_spec->ruoli_spec_id = $rq;
+           // $ruoli_spec->associati_id = $ruoli_speca;
             $ruoli_spec->nome = $viewData["ruoli"][$rq]->nome;
             $ruoli_spec->save();
            $rspid =  $ruoli_spec->id;

@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('enumruolispecs', function (Blueprint $table) {
             $table->id();
-            $table->enum('nome', ['Ordinario', 'Famigliare', 'Direttivo','Presidente','Vice_presidente']);
+            $table->string('nome')->nullable();
             $table->timestamps();
         });
     }

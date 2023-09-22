@@ -66,7 +66,7 @@
 
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
                                 <a href="/anagrafiche/tab1" id="home-tab"
-                                    class="nav-link @if ($viewData['anagrafiche'] === 'tab1') active @endif">Dati Generali</a>
+                                    class="nav-link @if ($viewData['anagrafiche'] === 'tab1') active @endif">Anagrafica</a>
 
                                 <a href="/anagrafiche/tab2" id="home-tab"
                                     class="nav-link @if ($viewData['anagrafiche'] === 'tab2') active @endif">Indirizzi e
